@@ -14,7 +14,46 @@
     display: none;
 }
 
+.posters {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.poster, .small-poster {
+    position: relative;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
 .poster {
     max-height: 250px;
-    margin-right: 10px;
+}
+
+.small-poster {
+    max-height: 200px;
+}
+
+.poster:hover, .small-poster:hover {
+    transform: scale(1.1);
+}
+
+.poster:hover .movie-title, .small-poster:hover .movie-title {
+    visibility: visible;
+    opacity: 1;
+}
+
+.movie-title {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 5px;
+    border-radius: 3px;
+    transition: visibility 0.3s ease, opacity 0.3s ease;
+    white-space: nowrap;
+    z-index: 1;
 }
